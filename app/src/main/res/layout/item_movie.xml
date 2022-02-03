@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardMovie"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    android:animateLayoutChanges="true"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="5dp" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/imageMovie"
+            tools:src="@drawable/infinity_war"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/verticalGuide"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.26" />
+
+        <TextView
+            android:id="@+id/textName"
+            tools:text="Name"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:includeFontPadding="false"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/textDirector"
+            app:layout_constraintStart_toEndOf="@id/verticalGuide" />
+
+        <TextView
+            android:id="@+id/textDirector"
+            tools:text="Director"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:includeFontPadding="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            app:layout_constraintTop_toBottomOf="@id/textName"
+            app:layout_constraintStart_toEndOf="@id/verticalGuide"
+            app:layout_constraintBottom_toTopOf="@id/textYear" />
+
+        <TextView
+            android:id="@+id/textYear"
+            tools:text="2021"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/textDirector"
+            app:layout_constraintBottom_toTopOf="@id/ratingMovie"
+            app:layout_constraintStart_toStartOf="@id/verticalGuide" />
+
+        <RatingBar
+            android:id="@+id/ratingMovie"
+            tools:rating="4"
+            style="@style/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            app:layout_constraintTop_toBottomOf="@id/textYear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/verticalGuide" />
+
+        <TextView
+            android:id="@+id/textDuration"
+            tools:text="90 Minutes"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
