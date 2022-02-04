@@ -33,4 +33,9 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerMovies.layoutManager = LinearLayoutManager(this)
         binding.recyclerMovies.adapter = adapter
     }
+
+    fun Suma(){
+        5+5
+    }
+
 }
